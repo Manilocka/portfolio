@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="font.css"> 
+    <title>Мобильная версия сайта</title>
+</head>
+<body style="background-color: #FEE8CF;">
+
+<header>
+    <div class="header-content">
+        <div class="time" id="userTime"></div>
+    </div>
+    <img id="batteryIcon" class="battery-icon" src="battery/battery4.png" alt="Battery Icon">
+</header>
+
+<div class="profile-top">
+    <img src="mini/mail.png" alt="Profile Picture" style="height: 100%; max-height: 23px;"/> 
+    <span style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">mail</span> 
+    <a href="javascript:history.back()" class="close-btn"><img src="button/close.png" alt="Close" style="height: 100%; max-height: 36px;"/></a>
+</div>
+
+<div class="separator white-separator"></div>
+
+<div class="to-field">
+    <div class="to-text">To:</div>
+    <div class="dropdown">
+        <div class="dropdown-select">Select</div>
+    </div>
+    <div class="dropdown-menu">
+        <div class="dropdown-item" data-email="ragozina2003@gmail.com">Nastya</div>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-item" data-email="olesyalenartovich@gmail.com">Olesya</div>
+    </div>
+</div>
+
+<div class="separator"></div>
+
+<div class="subject-field">
+    <input type="text" class="subject-input" placeholder="Subject" />
+</div>
+
+
+<div class="message-field">
+    <textarea class="message-input" placeholder="Write a text..."></textarea>
+</div>
+
+
+<img src="send1.png" alt="Send" class="send-button" id="sendButton" />
+
+<script src="script.js"></script> 
+</body>
+</html>

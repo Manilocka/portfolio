@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="font.css"> 
+    <title>3D проекты</title>
+</head>
+<body class="main-body">
+
+<header>
+    <div class="header-content">
+        <div class="time" id="userTime"></div>
+    </div>
+    <img id="batteryIcon" class="battery-icon" src="battery/battery4.png" alt="Battery Icon">
+</header>
+
+<div class="profile-top">
+    <img src="mini/olesya.png" alt="Profile Picture" style="height: 100%; max-height: 36px;"/> 
+    <span id="projectTitle" style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">Olesya’s art</span> 
+    <a href="index.html" class="close-btn"><img src="button/close.png" alt="Close" style="height: 100%; max-height: 36px;"/></a> 
+</div>
+
+<div class="separator white-separator"></div>
+
+<div class="mail-section">
+    <span class="mail-title" onclick="location.href='mail.html';">Mail</span> 
+</div>
+
+<div class="pink-separator separator"></div>
+
+<div class="photo-container">
+    <img id="displayImage" class="displayed-image" src="Nastya/img1.png" alt="3D Project Image">
+</div>
+
+
+<div class="top-separator">
+    <button class="nav-button" onclick="showPreviousImage()">
+        <img src="button/back_button.png" alt="Назад">
+    </button>
+    <button class="nav-button" id="toggleSizeButton" onclick="toggleImageSize()">
+        <img src="button/bigger.png" alt="Увеличить" id="sizeImage">
+    </button>
+    <button class="nav-button" onclick="showNextImage()">
+        <img src="button/next_button.png" alt="Вперед">
+    </button>
+</div>
+<div id="projectTitle"></div>
+
+<div class="bottom-footer">
+
+    
+</div>
+
+<script>
+    const images = [
+        {src: 'Olesya/img1.png', title: 'My groupmates'},
+        {src: 'Olesya/img2.png', title: 'Little witch'},
+        {src: 'Olesya/img3.png', title: 'grunge girl'},
+        {src: 'Olesya/img4.png', title: 'Girl redraw'},
+        {src: 'Olesya/img5.png', title: 'Tired Woman'},
+        {src: 'Olesya/img6.png', title: 'Don’t Touch Me'},
+        {src: 'Olesya/img7.png', title: 'Shiny Girl'},
+        {src: 'Olesya/img8.png', title: 'Just a portait'},
+
+    ];
+
+    let currentIndex = 0;
+    let isZoomed = false;
+    let isDragging = false; // Флаг для отслеживания, перетаскивается ли изображение
+    let startX, startY, initialTouchX, initialTouchY; // Позиции для перетаскивания
+
+    function updateImage() {
+        const image = images[currentIndex];
+        const imgElement = document.getElementById('displayImage');
+        imgElement.src = image.src;
+        document.getElementById('projectTitle').innerText = `${image.title} - Gallery`;
+
+        // Сброс размера изображения при обновлении
+        imgElement.style.transform = 'scale(1)';
+        imgElement.style.cursor = 'default'; // Устанавливаем курсор по умолчанию
+        isZoomed = false; 
+        document.getElementById('sizeImage').src = 'button/bigger.png'; 
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
+
+    function showPreviousImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    }
+
+    function toggleImageSize() {
+        const imgElement = document.getElementById('displayImage');
+        const sizeImage = document.getElementById('sizeImage');
+
+        if (isZoomed) {
+            imgElement.style.transform = 'scale(1)';
+            imgElement.style.cursor = 'default'; // Устанавливаем курсор по умолчанию
+            sizeImage.src = 'button/bigger.png'; 
+        } else {
+            imgElement.style.transform = 'scale(2)';
+            imgElement.style.cursor = 'grab'; // Устанавливаем курсор для перетаскивания
+            sizeImage.src = 'button/smaller.png'; 
+
+            // Устанавливаем начальные значения для перетаскивания
+            startX = imgElement.offsetLeft;
+            startY = imgElement.offsetTop;
+        }
+        isZoomed = !isZoomed;
+    }
+
+    // Обработка перемещения изображения
+    const imgElement = document.getElementById('displayImage');
+
+    imgElement.addEventListener('touchstart', (e) => {
+        if (isZoomed) {
+            isDragging = true;
+            initialTouchX = e.touches[0].clientX; // Позиция касания
+            initialTouchY = e.touches[0].clientY; // Позиция касания
+        }
+    });
+
+    imgElement.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            const dx = e.touches[0].clientX - initialTouchX;
+            const dy = e.touches[0].clientY - initialTouchY;
+
+            // Новые позиции изображения
+            const newLeft = startX + dx;
+            const newTop = startY + dy;
+
+            // Получение ширины и высоты изображения
+            const imgWidth = imgElement.offsetWidth;
+            const imgHeight = imgElement.offsetHeight;
+
+            // Предполагаемая ширина окна экрана
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            // Проверка ограничения
+            if (newLeft > 0 && newLeft < (screenWidth - imgWidth * 2) && // Учитываем увеличенный размер
+                newTop > 0 && newTop < (screenHeight - imgHeight * 2)) {
+                imgElement.style.left = newLeft + 'px';
+                imgElement.style.top = newTop + 'px';
+            }
+        }
+    });
+
+    imgElement.addEventListener('touchend', () => {
+        isDragging = false;
+        startX = imgElement.offsetLeft; 
+        startY = imgElement.offsetTop; 
+    });
+
+    updateImage(); // Инициализируем изображение при загрузке
+</script>
+<script src="script.js"></script> 
+</body>
+</html>
