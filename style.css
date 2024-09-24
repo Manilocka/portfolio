@@ -395,8 +395,8 @@ header {
 }
 
 .send-button {
-    position: relative; 
-    left: 48px; 
+    /* position: relative;  */
+    /* margin-left: 48px;  */
     cursor: pointer;
 }
 
