@@ -17,7 +17,7 @@
 </header>
 
 <div class="profile-top">
-    <img src="mini/3D.png" alt="Изображение профиля" class="profile-top__image" style="height: 100%; max-height: 36px;"/> 
+    <img src="mini/3D.png" alt="Иконка профайла" class="profile-top__image" style="height: 100%; max-height: 36px;"/> 
     <span id="projectTitle" class="profile-top__title" style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">3D projects</span> 
     <a href="index.html" class="profile-top__close-btn"><img src="button/close.png" alt="Закрыть" class="profile-top__close-icon" style="height: 100%; max-height: 36px;"/></a> 
 </div>
@@ -32,7 +32,7 @@
 
 <div class="photo-container">
     <img id="displayImage" class="photo-container__displayed-image" src="3D/img1.jpg" alt="Изображение 3D проекта">
-    <video id="displayVideo" class="photo-container__displayed-video" controls style="max-width: 100%; max-height: 100%; display: none;" alt="Видеопроекция 3D проекта"></video>
+    <video id="displayVideo" class="photo-container__displayed-video" controls style="max-width: 100%; max-height: 100%; display: none;" alt="Видео 3D проекта"></video>
 </div>
 
 <div class="top-separator">
@@ -52,18 +52,18 @@
 
 <script>
     const images = [
-        {src: '3D/img1.png', title: 'Nastya’s interior', alt: 'Современный интерьер комнаты, оформленный Настей'},
-        {src: '3D/img2.png', title: 'Nastya’s interior', alt: 'Другая перспектива современного интерьера Насти'},
-        {src: '3D/img3.png', title: 'Nastya’s robot', alt: 'Робот Насти с ярким дизайном и уникальными деталями'},
-        {src: '3D/img4.mp4', title: 'Nastya’s robot', alt: 'Анимация, демонстрирующая движение робота Насти'},
-        {src: '3D/img5.png', title: 'Nastya’s robot', alt: 'Робот Насти, изображенный на фоне интерьера'},
-        {src: '3D/img6.png', title: 'Nastya’s robot', alt: 'Детальный вид робота Насти, показывающий его функциональные части'},
-        {src: '3D/img7.png', title: 'Olesya’s interior', alt: 'Элегантный интерьер комнаты, созданный Оксаной'},
-        {src: '3D/img8.png', title: 'Olesya’s interior', alt: 'Вид интерьера Оксаны с акцентом на детали оформления'},
-        {src: '3D/img9.mp4', title: 'Olesya’s robot', alt: 'Анимация робота Оксаны с интерактивными элементами'},
-        {src: '3D/img10.png', title: 'Olesya’s robot', alt: 'Робот Оксаны, демонстрирующий высокую технологичность'},
-        {src: '3D/img11.png', title: 'Olesya’s robot', alt: 'Близкий план робота Оксаны, показывающий его особенности'},
-        {src: '3D/img12.png', title: 'Olesya’s robot', alt: 'Робот Оксаны на фоне стилизованного интерьера'},
+        {src: '3D/img1.png', title: 'Nastya’s interior', alt: 'Интерьер, созданный Настей'},
+        {src: '3D/img2.png', title: 'Nastya’s interior', alt: 'Интерьер, созданный Настей с другого ракурса'},
+        {src: '3D/img3.png', title: 'Nastya’s robot', alt: 'Робот Насти'},
+        {src: '3D/img4.mp4', title: 'Nastya’s robot', alt: 'Видео, демонстрирующее робота Насти'},
+        {src: '3D/img5.png', title: 'Nastya’s robot', alt: 'Робот Насти с другого ракурса'},
+        {src: '3D/img6.png', title: 'Nastya’s robot', alt: 'Детали робота Насти'},
+        {src: '3D/img7.png', title: 'Olesya’s interior', alt: 'Интерьер, созданный Олесей'},
+        {src: '3D/img8.png', title: 'Olesya’s interior', alt: 'Интерьер, созданный Олесей с другого ракурса'},
+        {src: '3D/img9.mp4', title: 'Olesya’s robot', alt: 'Видео, демонстрирующее робота Олеси'},
+        {src: '3D/img10.png', title: 'Olesya’s robot', alt: 'Робот Олеси'},
+        {src: '3D/img11.png', title: 'Olesya’s robot', alt: 'Робот Олеси с другого ракурса'},
+        {src: '3D/img12.png', title: 'Olesya’s robot', alt: 'Детали робота Олеси'},
     ];
 
     let currentIndex = 0;
