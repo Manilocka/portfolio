@@ -101,3 +101,4 @@ document.querySelectorAll('.grid__item').forEach(item => {
         }, 600); 
     });
 });
+

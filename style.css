@@ -189,6 +189,15 @@ header {
     right: 23px;
     height: 27px; 
     width: auto;
+
+    transition: transform 0.5s ease, 
+}
+
+.profile-top__close-btn:active {
+    transform: scale(0.9); 
+}
+.profile-top__close-icon {
+    transition: transform 0.5s ease; 
 }
 
 .close-btn {
@@ -380,10 +389,16 @@ header {
     background: none; 
     border: none; 
     cursor: pointer; 
+    transition: transform 0.1s ease;
 }
 
 .top-separator__nav-button img {
     object-fit: contain; 
+    transition: transform 0.3s ease;
+}
+
+.top-separator__nav-button:active {
+    transform: scale(0.9); 
 }
 
 
