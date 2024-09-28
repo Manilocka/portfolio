@@ -11,6 +11,20 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%; 
+    margin: 0; 
+    overflow: hidden; 
+}
+.container {
+    /* height: 100vh;  */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+
+}
+
 body {
     background-color: #72A4D7;
     display: flex;
@@ -648,4 +662,28 @@ header {
     .windows-logo {
         width: 150px; 
     }
+}
+
+@media (max-height: 700px) {
+
+
+    .grid__item img {
+        width: 80%; 
+    }
+
+    .header__time {
+        font-size: 1rem; 
+    }
+
+    .windows-logo {
+        width: 150px;
+    }
+    .grid__item img {
+        width: 80%; 
+    }
+    
+    .photo {
+        object-fit: contain; 
+    }
+
 }
