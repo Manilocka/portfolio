@@ -17,8 +17,9 @@ body {
     flex-direction: column;
     align-items: center; 
     justify-content: flex-start; 
-    height: 100vh; 
+    /* height: 100vh;  */
     overflow: hidden;
+    height: 100%;
 }
 
 .header {
@@ -49,6 +50,7 @@ body {
 
 .grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
     grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: repeat(5, auto); 
     gap: 10px; 
@@ -633,4 +635,17 @@ header {
 
 .overlay.active #overlayIcon {
     transform: scale(1.2); 
+}
+
+@media (max-width: 768px) {
+
+    .windows-logo {
+        width: 250px; 
+    }
+}
+
+@media (max-width: 400px) {
+    .windows-logo {
+        width: 150px; 
+    }
 }

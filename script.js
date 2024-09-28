@@ -102,3 +102,15 @@ document.querySelectorAll('.grid__item').forEach(item => {
     });
 });
 
+document.getElementById('closeButton').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (document.referrer) {
+        this.classList.add('fade-out');
+        setTimeout(function() {
+            history.back();
+        }, 300);
+    } else {
+        window.location.href = 'index.html'; 
+    }
+});
