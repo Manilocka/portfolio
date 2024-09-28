@@ -81,3 +81,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 2000);
     });
 });
+
+document.querySelectorAll('.grid__item').forEach(item => {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const link = this.querySelector('a') ? this.querySelector('a').href : this.href;
+        const iconSrc = this.querySelector('img').src; 
+
+        
+        const overlay = document.getElementById('overlay');
+        const overlayIcon = document.getElementById('overlayIcon');
+        overlayIcon.src = iconSrc; 
+        overlay.classList.add('active'); 
+
+       
+        setTimeout(() => {
+            window.location.href = link; 
+        }, 600); 
+    });
+});
