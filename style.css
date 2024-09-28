@@ -21,6 +21,83 @@ body {
     overflow: hidden;
 }
 
+.header {
+    width: 100%;
+    background-color: #DCAADF;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px; 
+}
+
+.header__content {
+    display: flex; 
+    align-items: center; 
+    flex-grow: 1; 
+}
+
+.header__time {
+    font-family: 'W95FA', sans-serif;
+    font-size: 24px; 
+    color: #FFFFFF;
+}
+
+.header__battery-icon {
+    height: auto;
+    margin-left: 20px; 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(5, auto); 
+    gap: 10px; 
+    width: 100%;
+    flex-grow: 0; 
+    padding: 10px; 
+}
+
+.grid__item {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+}
+
+.grid__item img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.grid__item--photo {
+    grid-column: 2 / span 2; 
+    grid-row: 1 / span 3; 
+}
+
+.windows-logo {
+    position: fixed;
+    bottom: 45px;
+    right: 30px;
+    width: auto;
+    height: auto; 
+    z-index: -1;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #72A4D7;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    height: 100vh; 
+    overflow: hidden;
+}
+
 header {
     width: 100%;
     background-color: #DCAADF;
@@ -87,6 +164,7 @@ header {
 }
 
 .profile-top {
+    font-family: 'W95FA';
     height: 36px; 
     width: 100%;
     background-color: #DBD6FD;
@@ -97,10 +175,19 @@ header {
     position: relative;
     box-sizing: border-box; 
 }
-.profile-top img {
+
+.profile-top__image {
     height: 26px; 
     margin-right: 8px; 
 }
+
+.profile-top__close-btn {
+    position: absolute;
+    right: 23px;
+    height: 27px; 
+    width: auto;
+}
+
 .close-btn {
     position: absolute;
     right: 23px;
@@ -110,9 +197,10 @@ header {
 .separator {
     width: 100%;
     height: 2px;
-    padding:1px;
+    padding: 1px;
 }
-.white-separator{
+
+.separator--white {
     background-color: white;
 }
 
@@ -127,7 +215,7 @@ header {
     box-sizing: border-box; 
 }
 
-.mail-section .mail-title {
+.mail-section__title {
     font-family: 'W95FA', sans-serif;
     font-size: 25px;
     text-decoration: underline;
@@ -135,10 +223,77 @@ header {
     display: flex; 
     align-items: center; 
 }
-.pink-separator {
+
+.separator--pink {
     background-color: #EB2864;
 }
 
+.skills-section {
+    font-family: 'W95FA';
+    display: flex; 
+    align-items: flex-start; 
+    margin-left: 10px;
+    margin-top: 36px; 
+}
+
+.skills-section__nastya-image {
+    margin-right: 10px; 
+    height: auto; 
+    width: auto; 
+}
+
+.skills-section__olesya-image {
+    margin-left: 10px; 
+    height: auto; 
+    width: auto; 
+}
+
+.skills-section__text-content {
+    margin-right: 10px; 
+}
+
+.skills-section__name {
+    font-size: 25px; 
+    font-family: 'W95FA', sans-serif;
+}
+
+.skills-section__item {
+    margin-top: 5px;
+    display: flex; 
+    margin-bottom: 20px; 
+}
+
+.skills-section__level-image {
+    align-self: center;
+    margin-left: 10px; 
+}
+
+.skills-section__skills {
+    font-family: 'W95FA', sans-serif; 
+    font-size: 15px; 
+    margin: 0;
+    text-align: left; 
+}
+
+.skills-section__about-title {
+    font-size: 22px; 
+    font-family: 'W95FA', sans-serif;
+}
+
+.skills-section__about-text,
+.skills-section__about-text-o {
+    width: 170px;
+    overflow-wrap: break-word; 
+}
+
+.skills-section__more-link {
+    font-family: 'W95FA', sans-serif;
+    color: #6E81B1;
+    font-size: 19px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 20px;
+}
 
 .more-link {
     font-family: 'W95FA', sans-serif;
@@ -151,13 +306,6 @@ header {
 .cv-image {
     width: 100%; 
     display: block; 
-}
-
-.skills-section {
-    display: flex; 
-    align-items: flex-start; 
-    margin-left: 10px;
-    margin-top: 36px; 
 }
 
 .olesya-img {
@@ -224,6 +372,17 @@ header {
     background-color: #FEE8EB; 
 }
 
+.top-separator__nav-button {
+    margin: 0px 10px; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.top-separator__nav-button img {
+    object-fit: contain; 
+}
+
 
 .nav-button {
     margin: 0px 10px; 
@@ -236,6 +395,7 @@ header {
 .nav-button img {
     object-fit: contain; 
 }
+
 .photo-container {
     display: flex;
     justify-content: center;
@@ -243,6 +403,18 @@ header {
     flex-grow: 1;
     overflow: hidden; 
     position: relative;
+}
+
+.photo-container__displayed-image {
+    max-width: 100%;
+    max-height: 400px; 
+    transition: transform 0.3s ease;
+}
+
+.photo-container__displayed-video {
+    max-width: 100%; 
+    max-height: 100%; 
+    display: none; 
 }
 
 .displayed-image {
@@ -280,7 +452,6 @@ header {
 }
 
 
-
 .to-field {
     display: flex;
     align-items: center;
@@ -295,7 +466,6 @@ header {
     font-family: 'W95FA', sans-serif;
     font-size: 26px;
     color: #F64B81;
-    
 }
 
 .dropdown {
@@ -363,14 +533,14 @@ header {
 
 .subject-input {
     background-color: white;
-    width: 277px; 
+    width: 277px;
     height: 23px;
-    color:  #FFB35C; 
+    color: #FFB35C;
     font-family: 'W95FA', sans-serif;
     font-size: 15px;
     border: none;
-    text-align: left; 
-    padding-left: 10px; 
+    text-align: left;
+    padding-left: 10px;
     margin-left: 55px;
 }
 
@@ -381,35 +551,35 @@ header {
 }
 
 .message-input {
-    width: 344px; 
-    height: 560px; 
-    color: #000; 
+    width: 344px;
+    height: 500px;
+    color: #000;
     font-family: 'W95FA', sans-serif;
-    font-size: 20px; 
-    resize: none; 
+    font-size: 20px;
+    resize: none;
     padding: 10px;
-    background-color: white; 
-    border-right: 2px solid #F64B81; 
-    border-bottom: 2px solid #F64B81; 
-    border-top: none; 
-    border-left: none; 
+    background-color: white;
+    border-right: 2px solid #F64B81;
+    border-bottom: 2px solid #F64B81;
+    border-top: none;
+    border-left: none;
 }
 
 .message-input::placeholder {
-    color: #FEE8CF; 
-    opacity: 1; 
+    color: #FEE8CF;
+    opacity: 1;
 }
+
 .subject-input::placeholder {
-    color: #FEE8CF; 
-    opacity: 1; 
+    color: #FEE8CF;
+    opacity: 1;
 }
 
 .send-button {
-    /* position: relative;  */
-    /* margin-left: 48px;  */
+    /* position: relative; */
+    /* margin-left: 48px; */
     cursor: pointer;
-}
-
+} 
 .cv-body {
     display: flex;
     flex-direction: column;

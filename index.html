@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="font.css"> 
-    <title>Мобильная версия сайта</title>
+    <link rel="stylesheet" href="font.css">
+    <title>Portfolio</title>
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <div class="time" id="userTime"></div>
+    <header class="header">
+        <div class="header__content">
+            <div class="header__time" id="userTime"></div>
         </div>
-        <img id="batteryIcon" class="battery-icon" src="battery/battery4.png" alt="Battery Icon">
+        <img class="header__battery-icon" src="battery/battery4.png" alt="Иконка батареи">
     </header>
 
-<div class="grid-container">
-    <a href="profile.html" class="grid-item"><img src="icon/profile.png" alt="Profile"></a>
-    <img class="grid-item photo" src="icon/photo.png" alt="Photo">
-    <a href="3D.html" class="grid-item"><img src="icon/3D.png" alt="3D"></a>
-    <a href="olesya_art.html" class="grid-item"><img src="icon/olesya's_art.png" alt="Olesya's Art"></a>
-    <a href="nastya_art.html" class="grid-item"><img src="icon/nastya's_art.png" alt="Nastya's Art"></a>
-    <a href="https://manilocka.github.io/" class="grid-item"><img src="icon/skybadminton.png" alt="Sky Badminton"></a>
-    <a href="https://scarletring.github.io/" class="grid-item"><img src="icon/scarletring.png" alt="Scarlet Ring"></a>
-    <a href="mail.html" class="grid-item"><img src="icon/mail.png" alt="Mail"></a>
-    <div class="grid-item"></div>
-    <div class="grid-item"></div>
-</div>
+    <div class="grid">
+        <a href="profile.html" class="grid__item"><img src="icon/profile.png" alt="Профиль"></a>
+        <img class="grid__item grid__item--photo" src="icon/photo.png" alt="Фото">
+        <a href="3D.html" class="grid__item"><img src="icon/3D.png" alt="Папка с работами 3D"> </a>
+        <a href="olesya_art.html" class="grid__item"><img src="icon/olesya's_art.png" alt="Арты Олеси"></a>
+        <a href="nastya_art.html" class="grid__item"><img src="icon/nastya's_art.png" alt="Арты Насти"></a>
+        <a href="https://manilocka.github.io/" class="grid__item"><img src="icon/skybadminton.png" alt="Игра SkyBadminton"></a>
+        <a href="https://scarletring.github.io/" class="grid__item"><img src="icon/scarletring.png" alt="Игра ScarletRing"></a>
+        <a href="mail.html" class="grid__item"><img src="icon/mail.png" alt="Почта"></a>
+        <div class="grid__item"></div>
+        <div class="grid__item"></div>
+    </div>
 
+    <img class="windows-logo" src="windows.png" alt="Логотип Windows">
 
-<img class="windows-logo" src="windows.png" alt="Windows Logo">
-
-<script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>

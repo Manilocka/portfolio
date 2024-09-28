@@ -6,84 +6,84 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="font.css"> 
     <title>Мобильная версия сайта</title>
-
 </head>
-<body style="background-color: #FFF6F7;">
+<body class="page" style="background-color: #FFF6F7;">
 
-    <header>
-        <div class="header-content">
-            <div class="time" id="userTime"></div>
+    <header class="header">
+        <div class="header__content">
+            <div class="header__time" id="userTime"></div>
         </div>
-        <img id="batteryIcon" class="battery-icon" src="battery/battery4.png" alt="Battery Icon">
+        <img class="header__battery-icon" src="battery/battery4.png" alt="Иконка батареи">
     </header>
 
-
-<div class="profile-top">
-    <img src="mini/profile.png" alt="Profile Picture" style="height: 100%; max-height: 36px;"/> 
-    <span style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">profile</span> 
-    <a href="index.html" class="close-btn"><img src="button/close.png" alt="Close" style="height: 100%; max-height: 36px;"/></a> 
-</div>
-
-<div class="separator white-separator"></div>
-
-<div class="mail-section">
-    <span class="mail-title" onclick="location.href='mail.html';">Mail</span> 
-</div>
-
-<div class="pink-separator separator"></div>
-
-<div class="skills-section">
-    <img src="nastya.png" alt="Nastya" class="nastya-img"> 
-    <div class="text-content">
-        <span style="font-size: 25px; font-family: 'W95FA', sans-serif;">Nastya (21)</span>
-        <div class="skills-item">
-            <span class="skills">Drawingㅤㅤ</span>
-            <img src="n_level1.png" alt="Level 1" class="level-img">
-        </div>
-        <div class="skills-item">
-            <span class="skills">Game making</span>
-            <img src="n_level2.png" alt="Level 2" class="level-img">
-        </div>
-        <div class="skills-item">
-            <span class="skills">Brainstorming</span>
-            <img src="n_level3.png" alt="Level 3" class="level-img">
-        </div>
-        <div class="about-section">
-            <span style="font-size: 22px; font-family: 'W95FA', sans-serif;">About</span>
-        </div>
-        <div class="skills-item">
-            <span class="skills about-text">I like drawing beautiful girls, cause they like me. I really like money. Donate to me pls. I like watching anime and doramas.</span>
-        </div>
-        <span class="more-link" onclick="location.href='nastya_CV.html';">More</span>
+    <div class="profile-top">
+        <img class="profile-top__image" style="height: 100%; max-height: 36px;" src="mini/profile.png" alt="Изображение профиля" />
+        <span class="profile-top__name" style="font-size: 23px;">profile</span>
+        <a href="index.html" class="profile-top__close-btn">
+            <img src="button/close.png" alt="Закрыть" />
+        </a>
     </div>
-</div>
 
-<div class="skills-section">
-    <div class="text-content">
-        <span style="font-size: 25px; font-family: 'W95FA', sans-serif;">Olesya (20)</span>
-        <div class="skills-item">
-            <span class="skills">Drawingㅤㅤ</span>
-            <img src="o_level1.png" alt="Level 1" class="level-img">
-        </div>
-        <div class="skills-item">
-            <span class="skills">Languages⠀</span>
-            <img src="o_level2.png" alt="Level 2" class="level-img">
-        </div>
-        <div class="skills-item">
-            <span class="skills">3D-modeling</span>
-            <img src="o_level3.png" alt="Level 3" class="level-img">
-        </div>
-        <div class="about-section">
-            <span style="font-size: 22px; font-family: 'W95FA', sans-serif;">About</span>
-        </div>
-        <div class="skills-item">
-            <span class="skills about-text-o">I like sleeping and eating. My favorite animal is a dog. I have it. It’s name Ponchik(Donut in Russian). Also, I like money. My brother give me it, so I like him too.</span>
-        </div>
-        <span class="more-link" onclick="location.href='olesya_CV.html';">More</span>
+    <div class="separator separator--white"></div>
+
+    <div class="mail-section">
+        <span class="mail-section__title" onclick="location.href='mail.html';">Mail</span>
     </div>
-    <img src="olesya.png" alt="Olesya" class="olesya-img"> 
-</div>
 
-<script src="script.js"></script> 
+    <div class="separator separator--pink"></div>
+
+    <div class="skills-section">
+        <img class="skills-section__nastya-image" src="nastya.png" alt="Настя" />
+        <div class="skills-section__text-content">
+            <span class="skills-section__name">Nastya (21)</span>
+            <div class="skills-section__item">
+                <span class="skills-section__skills">Drawing</span>
+                <img src="n_level1.png" alt="Уровень 1" class="skills-section__level-image">
+            </div>
+            <div class="skills-section__item">
+                <span class="skills-section__skills">Game making</span>
+                <img src="n_level2.png" alt="Уровень 2" class="skills-section__level-image">
+            </div>
+            <div class="skills-section__item">
+                <span class="skills-section__skills">Brainstorming</span>
+                <img src="n_level3.png" alt="Уровень 3" class="skills-section__level-image">
+            </div>
+            <div class="skills-section__about">
+                <span class="skills-section__about-title">About</span>
+            </div>
+            <div class="skills-section__item">
+                <span class="skills-section__about-text">I like drawing beautiful girls, cause they like me. I really like money. Donate to me pls. I like watching anime and doramas.</span>
+            </div>
+            <span class="skills-section__more-link" onclick="location.href='nastya_CV.html';">More</span>
+        </div>
+    </div>
+
+    <div class="skills-section">
+        <div class="skills-section__text-content">
+            <span class="skills-section__name">Olesya (20)</span>
+            <div class="skills-section__item">
+                <span class="skills-section__skills">Drawing</span>
+                <img src="o_level1.png" alt="Уровень 1" class="skills-section__level-image">
+            </div>
+            <div class="skills-section__item">
+                <span class="skills-section__skills">Languages</span>
+                <img src="o_level2.png" alt="Уровень 2" class="skills-section__level-image">
+            </div>
+            <div class="skills-section__item">
+                <span class="skills-section__skills">3D-modeling</span>
+                <img src="o_level3.png" alt="Уровень 3" class="skills-section__level-image">
+            </div>
+            <div class="skills-section__about">
+                <span class="skills-section__about-title">About</span>
+            </div>
+            <div class="skills-section__item">
+                <span class="skills-section__about-text">I like sleeping and eating. My favorite animal is a dog. I have it. It’s name Ponchik(Donut in Russian). Also, I like money. My brother give me it, so I like him too.</span>
+            </div>
+            <span class="skills-section__more-link" onclick="location.href='olesya_CV.html';">More</span>
+        </div>
+        <img class="skills-section__olesya-image" src="olesya.png" alt="Олеся" />
+    </div>
+
+    <script src="script.js"></script> 
 </body>
 </html>

@@ -7,32 +7,32 @@
     <link rel="stylesheet" href="font.css"> 
     <title>Мобильная версия сайта</title>
 </head>
-<body style="background-color: #FFF6F7;">
+<body class="cv-body">
 
-<header>
-    <div class="header-content">
-        <div class="time" id="userTime"></div>
+<header class="header">
+    <div class="header__content">
+        <div class="header__time" id="userTime"></div>
     </div>
-    <img id="batteryIcon" class="battery-icon" src="battery/battery4.png" alt="Battery Icon">
+    <img class="header__battery-icon" src="battery/battery4.png" alt="Иконка батареи">
 </header>
 
 <div class="profile-top">
-    <img src="mini/profile.png" alt="Profile Picture" style="height: 100%; max-height: 36px;"/> 
-    <span style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">profile</span> 
-    <a href="profile.html" class="close-btn"><img src="button/close.png" alt="Close" style="height: 100%; max-height: 36px;"/></a> 
+    <img class="profile-top__image" style="height: 100%; max-height: 36px;" src="mini/profile.png" alt="Изображение профиля" />
+    <span class="profile-top__name" style="font-size: 23px;">profile</span>
+    <a href="profile.html" class="profile-top__close-btn">
+        <img src="button/close.png" alt="Закрыть" class="profile-top__close-icon"/>
+    </a> 
 </div>
 
-<div class="separator white-separator"></div>
+<div class="separator separator--white"></div>
 
 <div class="mail-section">
-    <span class="mail-title" onclick="location.href='mail.html';">Mail</span> 
+    <span class="mail-section__title" onclick="location.href='mail.html';">Mail</span> 
 </div>
 
-<div class="pink-separator separator"></div>
+<div class="separator separator--pink"></div>
 
-<img src="olesya_CV.png" alt="Olesya" class="nastya-cv-img"> 
-
-<div class="separator"></div>
+<img src="olesya_cv.png" alt="Резюме Олеси" class="nastya-cv-img"> 
 
 <script src="script.js"></script> 
 </body>

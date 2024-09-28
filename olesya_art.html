@@ -9,59 +9,54 @@
 </head>
 <body class="main-body">
 
-<header>
-    <div class="header-content">
-        <div class="time" id="userTime"></div>
+<header class="header">
+    <div class="header__content">
+        <div class="header__time" id="userTime"></div>
     </div>
-    <img id="batteryIcon" class="battery-icon" src="battery/battery4.png" alt="Battery Icon">
+    <img id="batteryIcon" class="header__battery-icon" src="battery/battery4.png" alt="Иконка батареи">
 </header>
 
 <div class="profile-top">
-    <img src="mini/olesya.png" alt="Profile Picture" style="height: 100%; max-height: 36px;"/> 
-    <span id="projectTitle" style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">Olesya’s art</span> 
-    <a href="index.html" class="close-btn"><img src="button/close.png" alt="Close" style="height: 100%; max-height: 36px;"/></a> 
+    <img src="mini/nastya.png" alt="Изображение профиля" class="profile-top__image" style="height: 100%; max-height: 36px;"/> 
+    <span id="projectTitle" class="profile-top__title" style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">Nastya’s art</span> 
+    <a href="index.html" class="profile-top__close-btn"><img src="button/close.png" alt="Закрыть" class="profile-top__close-icon" style="height: 100%; max-height: 36px;"/></a> 
 </div>
 
-<div class="separator white-separator"></div>
+<div class="separator separator--white"></div>
 
 <div class="mail-section">
-    <span class="mail-title" onclick="location.href='mail.html';">Mail</span> 
+    <span class="mail-section__title mail-title" onclick="location.href='mail.html';">Mail</span> 
 </div>
 
-<div class="pink-separator separator"></div>
+<div class="separator separator--pink"></div>
 
 <div class="photo-container">
-    <img id="displayImage" class="displayed-image" src="Nastya/img1.png" alt="3D Project Image">
+    <img id="displayImage" class="photo-container__displayed-image" src="Olesya/img1.png" alt="Изображение 3D проекта">
 </div>
 
-
 <div class="top-separator">
-    <button class="nav-button" onclick="showPreviousImage()">
+    <button class="top-separator__nav-button" onclick="showPreviousImage()">
         <img src="button/back_button.png" alt="Назад">
     </button>
-    <button class="nav-button" id="toggleSizeButton" onclick="toggleImageSize()">
+    <button class="top-separator__nav-button" id="toggleSizeButton" onclick="toggleImageSize()">
         <img src="button/bigger.png" alt="Увеличить" id="sizeImage">
     </button>
-    <button class="nav-button" onclick="showNextImage()">
+    <button class="top-separator__nav-button" onclick="showNextImage()">
         <img src="button/next_button.png" alt="Вперед">
     </button>
 </div>
-<div id="projectTitle"></div>
-
-<div class="bottom-footer">
-
     
 </div>
 <script>
     const images = [
-        {src: 'Olesya/img1.png', title: 'My groupmates'},
-        {src: 'Olesya/img2.png', title: 'Little witch'},
-        {src: 'Olesya/img3.png', title: 'grunge girl'},
-        {src: 'Olesya/img4.png', title: 'Girl redraw'},
-        {src: 'Olesya/img5.png', title: 'Tired Woman'},
-        {src: 'Olesya/img6.png', title: 'Don’t Touch Me'},
-        {src: 'Olesya/img7.png', title: 'Shiny Girl'},
-        {src: 'Olesya/img8.png', title: 'Just a portrait'},
+        {src: 'Olesya/img1.png', title: 'My groupmates', alt: 'Группа студентов, улыбающихся и позирующих для фото'},
+        {src: 'Olesya/img2.png', title: 'Little witch', alt: 'Маленькая ведьма в костюме с волшебной палочкой на фоне леса'},
+        {src: 'Olesya/img3.png', title: 'grunge girl', alt: 'Девушка в гранжевом стиле, одетая в черную одежду с ярким макияжем'},
+        {src: 'Olesya/img4.png', title: 'Girl redraw', alt: 'Переосмысленный рисунок девушки с художественными эффектами'},
+        {src: 'Olesya/img5.png', title: 'Tired Woman', alt: 'Уставшая женщина с легким выражением грусти на лице'},
+        {src: 'Olesya/img6.png', title: 'Don’t Touch Me', alt: 'Женщина с выражением недовольства, показывающая жест не трогать ее'},
+        {src: 'Olesya/img7.png', title: 'Shiny Girl', alt: 'Девушка с сияющей кожей и ярким макияжем, улыбающаяся на фото'},
+        {src: 'Olesya/img8.png', title: 'Just a portrait', alt: 'Портрет девушки с нейтральным выражением лица и мягким фоном'},
     ];
 
     let currentIndex = 0;

@@ -9,66 +9,61 @@
 </head>
 <body class="main-body">
 
-<header>
-    <div class="header-content">
-        <div class="time" id="userTime"></div>
+<header class="header">
+    <div class="header__content">
+        <div class="header__time" id="userTime"></div>
     </div>
-    <img id="batteryIcon" class="battery-icon" src="battery/battery4.png" alt="Battery Icon">
+    <img id="batteryIcon" class="header__battery-icon" src="battery/battery4.png" alt="Иконка батареи">
 </header>
 
 <div class="profile-top">
-    <img src="mini/3D.png" alt="Profile Picture" style="height: 100%; max-height: 36px;"/> 
-    <span id="projectTitle" style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">3D projects</span> 
-    <a href="index.html" class="close-btn"><img src="button/close.png" alt="Close" style="height: 100%; max-height: 36px;"/></a> 
+    <img src="mini/3D.png" alt="Изображение профиля" class="profile-top__image" style="height: 100%; max-height: 36px;"/> 
+    <span id="projectTitle" class="profile-top__title" style="font-size: 23px; font-family: 'W95FA', sans-serif; height: 100%; display: flex; align-items: center;">3D projects</span> 
+    <a href="index.html" class="profile-top__close-btn"><img src="button/close.png" alt="Закрыть" class="profile-top__close-icon" style="height: 100%; max-height: 36px;"/></a> 
 </div>
 
-<div class="separator white-separator"></div>
+<div class="separator separator--white"></div>
 
 <div class="mail-section">
-    <span class="mail-title" onclick="location.href='mail.html';">Mail</span> 
+    <span class="mail-section__title" onclick="location.href='mail.html';">Mail</span> 
 </div>
 
-<div class="pink-separator separator"></div>
+<div class="separator separator--pink"></div>
 
-</div>
 <div class="photo-container">
-    <img id="displayImage" class="displayed-image" src="3D/img1.jpg" alt="3D Project Image">
-    <video id="displayVideo" controls style="max-width: 100%; max-height: 100%; display: none;"></video>
+    <img id="displayImage" class="photo-container__displayed-image" src="3D/img1.jpg" alt="Изображение 3D проекта">
+    <video id="displayVideo" class="photo-container__displayed-video" controls style="max-width: 100%; max-height: 100%; display: none;" alt="Видеопроекция 3D проекта"></video>
 </div>
-
 
 <div class="top-separator">
-    <button class="nav-button" onclick="showPreviousImage()">
+    <button class="top-separator__nav-button" onclick="showPreviousImage()">
         <img src="button/back_button.png" alt="Назад">
     </button>
-    <button class="nav-button" id="toggleSizeButton" onclick="toggleImageSize()">
+    <button class="top-separator__nav-button" id="toggleSizeButton" onclick="toggleImageSize()">
         <img src="button/bigger.png" alt="Увеличить" id="sizeImage">
     </button>
-    <button class="nav-button" onclick="showNextImage()">
+    <button class="top-separator__nav-button" onclick="showNextImage()">
         <img src="button/next_button.png" alt="Вперед">
     </button>
 </div>
-<div id="projectTitle"></div>
 
 <div class="bottom-footer">
-
-    
-</div>
+</div> 
 
 <script>
     const images = [
-        {src: '3D/img1.png', title: 'Nastya’s interior'},
-        {src: '3D/img2.png', title: 'Nastya’s interior'},
-        {src: '3D/img3.png', title: 'Nastya’s robot'},
-        {src: '3D/img4.mp4', title: 'Nastya’s robot'}, 
-        {src: '3D/img5.png', title: 'Nastya’s robot'},
-        {src: '3D/img6.png', title: 'Nastya’s robot'},
-        {src: '3D/img7.png', title: 'Olesya’s interior'},
-        {src: '3D/img8.png', title: 'Olesya’s interior'},
-        {src: '3D/img9.mp4', title: 'Olesya’s robot'},
-        {src: '3D/img10.png', title: 'Olesya’s robot'},
-        {src: '3D/img11.png', title: 'Olesya’s robot'},
-        {src: '3D/img12.png', title: 'Olesya’s robot'},
+        {src: '3D/img1.png', title: 'Nastya’s interior', alt: 'Современный интерьер комнаты, оформленный Настей'},
+        {src: '3D/img2.png', title: 'Nastya’s interior', alt: 'Другая перспектива современного интерьера Насти'},
+        {src: '3D/img3.png', title: 'Nastya’s robot', alt: 'Робот Насти с ярким дизайном и уникальными деталями'},
+        {src: '3D/img4.mp4', title: 'Nastya’s robot', alt: 'Анимация, демонстрирующая движение робота Насти'},
+        {src: '3D/img5.png', title: 'Nastya’s robot', alt: 'Робот Насти, изображенный на фоне интерьера'},
+        {src: '3D/img6.png', title: 'Nastya’s robot', alt: 'Детальный вид робота Насти, показывающий его функциональные части'},
+        {src: '3D/img7.png', title: 'Olesya’s interior', alt: 'Элегантный интерьер комнаты, созданный Оксаной'},
+        {src: '3D/img8.png', title: 'Olesya’s interior', alt: 'Вид интерьера Оксаны с акцентом на детали оформления'},
+        {src: '3D/img9.mp4', title: 'Olesya’s robot', alt: 'Анимация робота Оксаны с интерактивными элементами'},
+        {src: '3D/img10.png', title: 'Olesya’s robot', alt: 'Робот Оксаны, демонстрирующий высокую технологичность'},
+        {src: '3D/img11.png', title: 'Olesya’s robot', alt: 'Близкий план робота Оксаны, показывающий его особенности'},
+        {src: '3D/img12.png', title: 'Olesya’s robot', alt: 'Робот Оксаны на фоне стилизованного интерьера'},
     ];
 
     let currentIndex = 0;
@@ -153,3 +148,4 @@
 <script src="script.js"></script> 
 </body>
 </html>
+
