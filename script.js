@@ -114,3 +114,18 @@ document.getElementById('closeButton').addEventListener('click', function(event)
         window.location.href = 'index.html'; 
     }
 });
+
+document.querySelectorAll('.skills-section__more-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href'); 
+        const targetElement = document.querySelector(targetId);
+        const profileContent = document.querySelector('.profile__content');
+
+        const targetPosition = targetElement.offsetTop - profileContent.offsetTop;
+        profileContent.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    });
+});

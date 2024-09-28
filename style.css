@@ -43,8 +43,13 @@ body {
     align-items: center; 
     justify-content: space-between; 
     padding: 10px 20px; 
+    z-index: 1000;
 }
+.profile__content {
 
+    max-height: calc(100vh - 60px); 
+    overflow-y: auto; 
+}
 .header__content {
     display: flex; 
     align-items: center; 
@@ -53,7 +58,7 @@ body {
 
 .header__time {
     font-family: 'W95FA', sans-serif;
-    font-size: 24px; 
+    font-size: 150%; 
     color: #FFFFFF;
 }
 
@@ -134,7 +139,7 @@ header {
 
 .time {
     font-family: 'W95FA', sans-serif;
-    font-size: 24px; 
+    font-size: 150%; 
     color: #FFFFFF;
  
 }
@@ -196,7 +201,7 @@ header {
 }
 
 .profile-top__image {
-    height: 26px; 
+    height: auto;
     margin-right: 8px; 
 }
 
@@ -241,11 +246,12 @@ header {
     padding-left: 18px; 
     color: #EB2864;
     box-sizing: border-box; 
+
 }
 
 .mail-section__title {
     font-family: 'W95FA', sans-serif;
-    font-size: 25px;
+    font-size: 150%;
     text-decoration: underline;
     height: 100%; 
     display: flex; 
@@ -267,21 +273,21 @@ header {
 .skills-section__nastya-image {
     margin-right: 10px; 
     height: auto; 
-    width: auto; 
+    width: 40%; 
 }
 
 .skills-section__olesya-image {
     margin-left: 10px; 
     height: auto; 
-    width: auto; 
+    width: 40%; 
 }
 
 .skills-section__text-content {
-    margin-right: 10px; 
+    margin-right: 1%; 
 }
 
 .skills-section__name {
-    font-size: 25px; 
+    font-size: 150%; 
     font-family: 'W95FA', sans-serif;
 }
 
@@ -298,26 +304,26 @@ header {
 
 .skills-section__skills {
     font-family: 'W95FA', sans-serif; 
-    font-size: 15px; 
+    font-size: 100%; 
     margin: 0;
     text-align: left; 
 }
 
 .skills-section__about-title {
-    font-size: 22px; 
+    font-size: 120%; 
     font-family: 'W95FA', sans-serif;
 }
 
 .skills-section__about-text,
 .skills-section__about-text-o {
-    width: 170px;
+    width: 75%;
     overflow-wrap: break-word; 
 }
 
 .skills-section__more-link {
     font-family: 'W95FA', sans-serif;
     color: #6E81B1;
-    font-size: 19px;
+    font-size: 120%;
     text-decoration: underline;
     cursor: pointer;
     margin-top: 20px;
@@ -326,7 +332,7 @@ header {
 .more-link {
     font-family: 'W95FA', sans-serif;
     color: #6E81B1;
-    font-size: 19px;
+    font-size: 120%;
     text-decoration: underline;
     cursor: pointer;
     margin-top: 20px;
@@ -366,7 +372,7 @@ header {
 
 .skills {
     font-family: 'W95FA', sans-serif; 
-    font-size: 15px; 
+    font-size: 100%; 
     margin: 0;
     text-align: left; 
 }
@@ -498,7 +504,7 @@ header {
 
 .to-text {
     font-family: 'W95FA', sans-serif;
-    font-size: 26px;
+    font-size: 150%;
     color: #F64B81;
 }
 
@@ -514,7 +520,7 @@ header {
     width: 277px;
     height: 23px;
     font-family: 'W95FA', sans-serif;
-    font-size: 17.5px;
+    font-size: 120%;
     color: #FFB35C;
     padding: 0 5px;
     border: 1px solid transparent;
@@ -524,7 +530,7 @@ header {
 
 .dropdown-icon {
     margin-left: 5px;
-    font-size: 15px;
+    font-size: 100%;
 }
 
 .dropdown-menu {
@@ -540,7 +546,7 @@ header {
 
 .dropdown-item {
     font-family: 'W95FA', sans-serif;
-    font-size: 17.5px;
+    font-size: 120%;
     color: #FFA1BF;
     padding: 5px 10px;
     cursor: pointer;
@@ -571,7 +577,7 @@ header {
     height: 23px;
     color: #FFB35C;
     font-family: 'W95FA', sans-serif;
-    font-size: 15px;
+    font-size: 100%;
     border: none;
     text-align: left;
     padding-left: 10px;
@@ -586,10 +592,10 @@ header {
 
 .message-input {
     width: 344px;
-    height: 500px;
+    height: 60vh;
     color: #000;
     font-family: 'W95FA', sans-serif;
-    font-size: 20px;
+    font-size: 120%;
     resize: none;
     padding: 10px;
     background-color: white;
@@ -687,3 +693,4 @@ header {
     }
 
 }
+
