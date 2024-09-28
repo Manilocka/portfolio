@@ -69,20 +69,22 @@
 
     let currentIndex = 0;
     let isZoomed = false;
-    let isDragging = false; // Флаг для отслеживания, перетаскивается ли изображение
-    let startX, startY, initialTouchX, initialTouchY; // Позиции для перетаскивания
 
     function updateImage() {
         const image = images[currentIndex];
         const imgElement = document.getElementById('displayImage');
         imgElement.src = image.src;
         document.getElementById('projectTitle').innerText = `${image.title} - Gallery`;
-
-        // Сброс размера изображения при обновлении
-        imgElement.style.transform = 'scale(1)';
-        imgElement.style.cursor = 'default'; // Устанавливаем курсор по умолчанию
-        isZoomed = false; 
-        document.getElementById('sizeImage').src = 'button/bigger.png'; 
+        
+        imgElement.style.transform = 'scale(1)'; 
+        imgElement.style.width = 'auto'; 
+        imgElement.style.height = 'auto'; 
+        imgElement.style.maxHeight = '100%'; 
+        imgElement.style.maxWidth = '100%'; 
+        imgElement.style.objectFit = 'contain'; 
+        
+        isZoomed = false;
+        document.getElementById('sizeImage').src = 'button/bigger.png';
     }
 
     function showNextImage() {
@@ -97,68 +99,28 @@
 
     function toggleImageSize() {
         const imgElement = document.getElementById('displayImage');
-        const sizeImage = document.getElementById('sizeImage');
 
         if (isZoomed) {
+            
             imgElement.style.transform = 'scale(1)';
-            imgElement.style.cursor = 'default'; // Устанавливаем курсор по умолчанию
-            sizeImage.src = 'button/bigger.png'; 
+            imgElement.style.width = 'auto';
+            imgElement.style.height = 'auto';
+            imgElement.style.maxHeight = '100%';
+            imgElement.style.maxWidth = '100%';
         } else {
+           
             imgElement.style.transform = 'scale(2)';
-            imgElement.style.cursor = 'grab'; // Устанавливаем курсор для перетаскивания
-            sizeImage.src = 'button/smaller.png'; 
-
-            // Устанавливаем начальные значения для перетаскивания
-            startX = imgElement.offsetLeft;
-            startY = imgElement.offsetTop;
+            imgElement.style.width = 'auto'; 
+            imgElement.style.height = 'auto';
+            imgElement.style.maxWidth = 'none'; 
+            imgElement.style.maxHeight = 'none'; 
         }
+
+        imgElement.style.objectFit = 'contain'; 
         isZoomed = !isZoomed;
     }
 
-    // Обработка перемещения изображения
-    const imgElement = document.getElementById('displayImage');
-
-    imgElement.addEventListener('touchstart', (e) => {
-        if (isZoomed) {
-            isDragging = true;
-            initialTouchX = e.touches[0].clientX; // Позиция касания
-            initialTouchY = e.touches[0].clientY; // Позиция касания
-        }
-    });
-
-    imgElement.addEventListener('touchmove', (e) => {
-        if (isDragging) {
-            const dx = e.touches[0].clientX - initialTouchX;
-            const dy = e.touches[0].clientY - initialTouchY;
-
-            // Новые позиции изображения
-            const newLeft = startX + dx;
-            const newTop = startY + dy;
-
-            // Получение ширины и высоты изображения
-            const imgWidth = imgElement.offsetWidth;
-            const imgHeight = imgElement.offsetHeight;
-
-            // Предполагаемая ширина окна экрана
-            const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
-
-            // Проверка ограничения
-            if (newLeft > 0 && newLeft < (screenWidth - imgWidth * 2) && // Учитываем увеличенный размер
-                newTop > 0 && newTop < (screenHeight - imgHeight * 2)) {
-                imgElement.style.left = newLeft + 'px';
-                imgElement.style.top = newTop + 'px';
-            }
-        }
-    });
-
-    imgElement.addEventListener('touchend', () => {
-        isDragging = false;
-        startX = imgElement.offsetLeft; 
-        startY = imgElement.offsetTop; 
-    });
-
-    updateImage(); // Инициализируем изображение при загрузке
+    updateImage(); 
 </script>
 <script src="script.js"></script> 
 </body>

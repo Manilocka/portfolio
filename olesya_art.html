@@ -52,8 +52,75 @@
 
     
 </div>
-
 <script>
+    const images = [
+        {src: 'Olesya/img1.png', title: 'My groupmates'},
+        {src: 'Olesya/img2.png', title: 'Little witch'},
+        {src: 'Olesya/img3.png', title: 'grunge girl'},
+        {src: 'Olesya/img4.png', title: 'Girl redraw'},
+        {src: 'Olesya/img5.png', title: 'Tired Woman'},
+        {src: 'Olesya/img6.png', title: 'Don’t Touch Me'},
+        {src: 'Olesya/img7.png', title: 'Shiny Girl'},
+        {src: 'Olesya/img8.png', title: 'Just a portrait'},
+    ];
+
+    let currentIndex = 0;
+    let isZoomed = false;
+
+    function updateImage() {
+        const image = images[currentIndex];
+        const imgElement = document.getElementById('displayImage');
+        imgElement.src = image.src;
+        document.getElementById('projectTitle').innerText = `${image.title} - Gallery`;
+        
+        imgElement.style.transform = 'scale(1)'; 
+        imgElement.style.width = 'auto'; 
+        imgElement.style.height = 'auto'; 
+        imgElement.style.maxHeight = '100%'; 
+        imgElement.style.maxWidth = '100%'; 
+        imgElement.style.objectFit = 'contain'; 
+        
+        isZoomed = false;
+        document.getElementById('sizeImage').src = 'button/bigger.png';
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
+
+    function showPreviousImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    }
+
+    function toggleImageSize() {
+        const imgElement = document.getElementById('displayImage');
+
+        if (isZoomed) {
+            
+            imgElement.style.transform = 'scale(1)';
+            imgElement.style.width = 'auto';
+            imgElement.style.height = 'auto';
+            imgElement.style.maxHeight = '100%';
+            imgElement.style.maxWidth = '100%';
+        } else {
+           
+            imgElement.style.transform = 'scale(2)';
+            imgElement.style.width = 'auto'; 
+            imgElement.style.height = 'auto';
+            imgElement.style.maxWidth = 'none'; 
+            imgElement.style.maxHeight = 'none'; 
+        }
+
+        imgElement.style.objectFit = 'contain'; 
+        isZoomed = !isZoomed;
+    }
+
+    updateImage(); 
+</script>
+
+<!-- <script>
     const images = [
         {src: 'Olesya/img1.png', title: 'My groupmates'},
         {src: 'Olesya/img2.png', title: 'Little witch'},
@@ -158,7 +225,7 @@
     });
 
     updateImage(); // Инициализируем изображение при загрузке
-</script>
+</script> -->
 <script src="script.js"></script> 
 </body>
 </html>

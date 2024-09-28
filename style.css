@@ -265,11 +265,18 @@ header {
     touch-action: none; 
 }
 
-.nastya-cv-img {
+/* .nastya-cv-img {
     display: block; 
     width: 100%; 
     height: auto; 
     float: left;
+} */
+.nastya-cv-img {
+    width: auto; 
+    height: auto; 
+    max-width: 100%; 
+    display: block; 
+    margin: 0 auto; 
 }
 
 
@@ -281,13 +288,14 @@ header {
     height: 44px;
     width: 100%;
     position: relative;
+    justify-content: center;
 }
 
 .to-text {
     font-family: 'W95FA', sans-serif;
     font-size: 26px;
     color: #F64B81;
-    margin-left: 23px;
+    
 }
 
 .dropdown {
@@ -320,9 +328,10 @@ header {
     display: none;
     position: absolute;
     background: white;
-    width: 100%;
+    width: 277px;
     border: 1px solid #FFB35C;
     z-index: 1;
+    margin-left: 55px;
 }
 
 .dropdown-item {
@@ -356,12 +365,13 @@ header {
     background-color: white;
     width: 277px; 
     height: 23px;
-    color: #FEE8CF; 
+    color:  #FFB35C; 
     font-family: 'W95FA', sans-serif;
     font-size: 15px;
     border: none;
     text-align: left; 
     padding-left: 10px; 
+    margin-left: 55px;
 }
 
 .message-field {
