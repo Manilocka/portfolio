@@ -171,8 +171,12 @@ header {
 .grid-item img {
     max-width: 100%; 
     height: auto; 
+    
 }
-
+.grid__item--photo {
+    grid-column: span 2;  
+    grid-row: span 3;     
+}
 .photo {
     grid-column: 2 / span 2; 
     grid-row: 1 / span 3; 
@@ -246,6 +250,8 @@ header {
     padding-left: 18px; 
     color: #EB2864;
     box-sizing: border-box; 
+    padding: 0 18px;
+    justify-content: space-between;
 
 }
 
@@ -256,6 +262,13 @@ header {
     height: 100%; 
     display: flex; 
     align-items: center; 
+}
+
+.mail-section__phone {
+    font-family: 'W95FA', sans-serif; 
+    font-size: 150%; 
+    color: #EB2864; 
+
 }
 
 .separator--pink {
