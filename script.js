@@ -129,3 +129,6 @@ document.querySelectorAll('.skills-section__more-link').forEach(link => {
         });
     });
 });
+
+
+
