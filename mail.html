@@ -39,17 +39,44 @@
     </div>
 </div>
 <div class="separator"></div>
+<form id="emailForm" class="form-container" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" id="accessKey" value="c424e5cf-854f-4a17-a08b-1f0aaa45020d">
+    
+    <input type="hidden" name="email" id="recipientEmail" required>
 
-<div class="subject-field">
-    <input type="text" class="subject-input" placeholder="Subject" />
-</div>
+    <div class="subject-field">
+        <input type="text" name="subject" class="subject-input" placeholder="Subject" required>
+    </div>
+       
+    <div class="message-field">
+        <textarea class="message-input" name="mail" placeholder="Write a text..." required></textarea> 
+    </div>
+
+    <input type="image" src="send1.png" alt="Отправить" class="send-button" id="sendButton" />
+</form>
+
+<script>
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    const dropdownSelect = document.querySelector('.dropdown-select');
+    const recipientEmailInput = document.getElementById('recipientEmail');
+    const accessKeyInput = document.getElementById('accessKey');
+
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const email = this.getAttribute('data-email');
+            dropdownSelect.textContent = this.textContent;
+            recipientEmailInput.value = email;
+
+            if (this.textContent === 'Olesya') {
+                accessKeyInput.value = '0dd89945-3ba6-42f9-93e2-ff775a2c8a9f';
+            } else if (this.textContent === 'Nastya') {
+                accessKeyInput.value = 'c424e5cf-854f-4a17-a08b-1f0aaa45020d';
+            }
+        });
+    });
+</script>
 
 
-<div class="message-field">
-    <textarea class="message-input" placeholder="Write a text..."></textarea> 
-</div>
-
-<img src="send1.png" alt="Отправить" class="send-button" id="sendButton" /> 
 
 <script src="script.js"></script> 
 </body>
